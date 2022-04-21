@@ -5,6 +5,7 @@ export GO11MODULE=on
 export GOOS=linux
 export CGO_ENABLED=0
 export GOPATH=$(shell readlink -f .)
+export GOPROXY=https://proxy.golang.com.cn,direct
 GOARCH := $(shell go env GOARCH)
 build:
 	mkdir -p bin

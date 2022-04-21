@@ -34,7 +34,12 @@ configure_yum_repos() {
     # Add continuous tag for latest build tools and mark as required so we
     # can depend on those latest tools being available in all container
     # builds.
-    echo -e "[f${version_id}-coreos-continuous]\nenabled=1\nmetadata_expire=1m\nbaseurl=https://kojipkgs.fedoraproject.org/repos-dist/f${version_id}-coreos-continuous/latest/\$basearch/\ngpgcheck=0\nskip_if_unavailable=False\n" > /etc/yum.repos.d/coreos.repo
+    echo -e "[f${version_id}-coreos-continuous]\nenabled=1\nmetadata_expire=1m\nbaseurl=http://10.253.12.70/mirrors/fedora-coreos/$basearch\ngpgcheck=0\nskip_if_unavailable=False\n" > /etc/yum.repos.d/coreos.repo
+    echo -e "[fedora]\nenabled=1\nmetadata_expire=1m\nbaseurl=https://mirrors.bfsu.edu.cn/fedora/releases/35/Everything/$basearch/os/\ngpgcheck=0\nskip_if_unavailable=False\n" > /etc/yum.repos.d/fedora.repo
+    echo -e "[fedora-modular]\nenabled=1\nmetadata_expire=1m\nbaseurl=https://mirrors.bfsu.edu.cn/fedora/releases/35/Modular/$basearch/os/\ngpgcheck=0\nskip_if_unavailable=False\n" > /etc/yum.repos.d/fedora-modular.repo
+    echo -e "[fedora-update]\nenabled=1\nmetadata_expire=1m\nbaseurl=https://mirrors.bfsu.edu.cn/fedora/updates/35/Everything/$basearch/\ngpgcheck=0\nskip_if_unavailable=False\n" > /etc/yum.repos.d/fedora-update.repo
+    echo -e "[fedora-update-modular]\nenabled=1\nmetadata_expire=1m\nbaseurl=https://mirrors.bfsu.edu.cn/fedora/updates/35/Modular/$basearch/\ngpgcheck=0\nskip_if_unavailable=False\n" > /etc/yum.repos.d/fedora-update-modular.repo
+    echo > /etc/yum.repos.d/fedora-cisco-openh264.repo
 }
 
 install_rpms() {
