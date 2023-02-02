@@ -14,8 +14,8 @@ It assumes some familiarity with the primary `README.md`.
 ## Builds
 
 coreos-assembler operates on a "build directory", which can contain multiple
-builds. A build is a pairing of an OSTree commit (stored as `*-ostree.tar`) as
-well as an optional set of disk images.
+builds. A build is a pairing of an OSTree commit (stored as
+`*-ostree.ociarchive`) as well as an optional set of disk images.
 
 This is in contrast to [rpm-ostree](https://coreos.github.io/rpm-ostree/) which
 just generates OSTree commits, and doesn't have anything to do with disk
